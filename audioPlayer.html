@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" /><!-- 让浏览器以utf-8来解析当前网页-->
+	<meta name="keywords" content="关键词,关键字" />
+	<meta name="description" content="网页描述80字" />
+	<title>HTML5 musicPlayer</title><!-- 网页标题-->
+	<script src="tool.js"></script>
+	<style>
+		.main {
+			width: 700px;
+			height: 293px;
+			margin: 0 auto;
+			transform: translateY(50%);
+			background-image: url('img/wrapp.jpg');
+			background-size: 95%;
+			background-repeat: repeat no-repeat;
+		    position: relative;
+		    border-radius: 7px;
+		    box-shadow: 0px 0px 12px 1px #2a2727;
+		}
+		.theAudio {
+			display:none;
+		}
+		.control {
+			position: relative;
+			top: 80%;
+			
+		}
+		.playbutton {
+		    width: 50px;
+		    height: 50px;
+		    background: url('img/play-2749271.png');
+		    background-size: 205%;
+		    background-repeat: no-repeat;
+		    background-position: 2.5px 0;
+		    float: left;
+		    margin-left: 9%;
+		    z-index: 2;
+		}
+		.playbutton.clicked {
+			background-position: -53.5px 0;
+		}
+		/* 进度条动画效果 */
+		.progress-bar-container {
+			height: 4px;
+		    background-color: darkcyan;
+		    border-radius: 3px;
+		    border-left: 0.5px solid #0FF;
+		    border-top: 0.5px solid #0FF;
+		    border-right: 0.5px solid #0DC;
+		    border-bottom: 1px solid #0DC;
+		    width: 365px;
+		    position: relative;
+		    left: 160px;
+		    top: 23px;
+		}
+		.progress-bar {
+			height: 1px;
+		    border-radius: 1px;
+		    margin: 1.7px 1px;
+		    background: #444443;
+		    position: absolute;
+		    box-shadow: 0px 0px 7px 2px #444444;
+		    width: 0%;
+		}
+		.targetname {
+			font-size: 64px;
+		    font-family: fantasy;
+		    font-style: oblique;
+		    color: crimson;
+		    position: absolute;
+		    top: 51%;
+		    right: 34%;
+		    opacity: 0.83;
+		}
+		.timeshow {
+		    position: relative;
+		    right: -3px;
+		    top: 11px;
+		    font-family: cursive;
+		    font-size: 15px;
+		    font-weight: 500;
+		    pointer-events: none;
+		}
+		#id-span-end {
+			position: relative;
+		    left: 374px;
+		    color: #444442ab;
+		}
+		#id-span-now {
+		    color: #444442;
+		}
+		#id-span-v {
+			position: relative;
+		    right: -373px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="main">
+		<div class="targetname">
+			<span>ArmPlayer.</span>
+		</div>
+		<!-- 控制模块 -->
+		<div class="control">
+			<div class="playbutton"></div>
+
+			<!-- 进度条 -->
+			<div class="progress-bar-container">
+				<div class="progress-bar"></div>
+			</div>
+
+			<div class="timeshow">
+				<span id="id-span-now">00:00</span>
+				<span id="id-span-end">00:00</span>
+				<span id="id-span-v">📢:50%</span>
+			</div>
+			
+		</div>
+
+		
+	</div>	
+	
+		<!-- 音乐源 -->
+		<div class="theAudio">
+			<audio controls="controls" id='id-audio-player' class="">
+				<source src='C AllStar - 天梯 (Live).mp3'>
+			</audio>
+		</div>
+		
+		<!-- 音乐源 -->
+
+	<script src="ArmPlayer.js"></script>
+</body>
+</html>
